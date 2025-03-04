@@ -17,7 +17,7 @@ router.get("/recommendations", async (req, res) => {
     });
     try {
         const response = await fetch(
-            `http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${encodeURIComponent(artist)}&api_key=${LAST_FM_API_KEY}&format=json`,
+            `https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${artist}&api_key=${LAST_FM_API_KEY}&format=json`,
             {
                 headers: {
                     Accept: "application/json"
