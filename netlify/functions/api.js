@@ -18,7 +18,7 @@ router.get("/recommendations", async (req, res) => {
     try {
         console.log("apikey: " + LAST_FM_API_KEY);
         const response = await fetch(
-            `https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${artist}&api_key=6a75091e2fe639ad539a21d8ff485c57&format=json`,
+            `https://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=${artist}&api_key=6a75091e2fe639ad539a21d8ff485c57&format=json`,
             {
                 headers: {
                     Accept: "application/json"
