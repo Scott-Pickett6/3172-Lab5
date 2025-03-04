@@ -16,6 +16,7 @@ If what is being submitted is an individual Lab or Assignment, you may simply in
 
 ## Citations
 [1]M. Otto, “Introduction,” Getbootstrap.com, 2019. https://getbootstrap.com/docs/4.0/getting-started/introduction/
+cite the music api
 
 
 ## Acknowledgments
