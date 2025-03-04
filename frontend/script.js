@@ -1,5 +1,6 @@
 const recommendations = document.getElementById("recommendations");
 async function getRecommendations(){
+    recommendations.innerHTML = "";
     const artist = document.getElementById("artist").value;
     const response = await fetch(`/api/recommendations?artist=${artist}`);
     const data = await response.json();
