@@ -15,7 +15,7 @@ router.get("/recommendations", async (req, res) => {
     });
     try {
         const response = await fetch(
-            `https://musicbrainz.org/ws/2/artist/?query=artist:${encodeURIComponent(artist)}fmt=json`,
+            `https://musicbrainz.org/ws/2/artist/?query=artist:${encodeURIComponent(artist)}&fmt=json`,
             {
                 headers: {
                     Accept: "application/json"
