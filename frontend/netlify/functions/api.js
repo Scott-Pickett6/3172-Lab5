@@ -6,18 +6,18 @@ import dotenv from "dotenv";
 dotenv.config();
 const api = express();
 const router = express.Router();
+const LAST_FM_API_KEY = process.env.LAST_FM_API_KEY;
 
 router.get("/recommendations", async (req, res) => {
     const artist = req.query.artist;
     console.log("artist: " + artist);
-
 
     if (!artist) return res.status(400).json({
         error: "Artist is required"
     });
     try {
         const response = await fetch(
-            `https://musicbrainz.org/ws/2/artist/?query=artist:${encodeURIComponent(artist)}&fmt=json`,
+            `http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${encodeURIComponent(artist)}&api_key=${LAST_FM_API_KEY}&format=json`,
             {
                 headers: {
                     Accept: "application/json"
