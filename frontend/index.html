@@ -6,13 +6,9 @@
     <title>Document</title>
 </head>
 <body>
+    <input type="text" id="artist" placeholder="Enter artist name">
     <button onclick="getRecommendations()">Get Recommendations</button>
-    <script>
-        async function getRecommendations(){
-            const response = await fetch(`/netlify/functions/api/recommendations?artist=${"stevie ray vaughan"})}`);
-            const data = await response.json();
-            console.log("Data in index: " + data);
-        }
+    <script src="../script.js">
     </script>
 </body>
 </html>
