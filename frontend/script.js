@@ -5,16 +5,23 @@ async function getRecommendations(){
     const response = await fetch(`/api/recommendations?artist=${artist}`);
     const data = await response.json();
     console.log(data);
-    const message = document.createElement("p");
-    message.textContent = `Here some songs we recommend from ${data.toptracks["@attr"].artist}`;
-    recommendations.appendChild(message);
-    const unorderedList = document.createElement("ul");
-    for(let i = 0; i < 5; i++){
-        const trackName = data.toptracks.track[i].name;
-        const listItem = document.createElement("li");
-        listItem.textContent = trackName;
-        unorderedList.appendChild(listItem);
+    if(data.error){
+        const errorMessage = document.createElement("p");
+        errorMessage.textContent = data.error;
+        recommendations.appendChild(errorMessage);
     }
-    recommendations.appendChild(unorderedList);
+    else{
+        const message = document.createElement("p");
+        message.textContent = `Here some songs we recommend from ${data.toptracks["@attr"].artist}`;
+        recommendations.appendChild(message);
+        const unorderedList = document.createElement("ul");
+        for(let i = 0; i < 5; i++){
+            const trackName = data.toptracks.track[i].name;
+            const listItem = document.createElement("li");
+            listItem.textContent = trackName;
+            unorderedList.appendChild(listItem);
+        }
+        recommendations.appendChild(unorderedList);
+    }
 }
 
