@@ -7,7 +7,7 @@ async function getRecommendations(){
     console.log(data);
     if(data.error){
         const errorMessage = document.createElement("p");
-        errorMessage.textContent = data.error;
+        errorMessage.textContent = data.message;
         recommendations.appendChild(errorMessage);
     }
     else{
