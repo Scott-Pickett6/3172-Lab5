@@ -1,6 +1,7 @@
 [functions]
-    external_note_modeules = ["express"]
-    node_bundler = "esbuild"
+    [functions.external_note_modeules]
+        external_note_modeules = ["express"]
+        node_bundler = "esbuild"
 
 [[redirects]]
     force = true
