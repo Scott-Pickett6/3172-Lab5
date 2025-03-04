@@ -3,10 +3,10 @@ async function getRecommendations(){
     const artist = document.getElementById("artist").value;
     const response = await fetch(`/api/recommendations?artist=${artist}`);
     const data = await response.json();
-    console.log(data.toptracks.track);
-
+    console.log(data.toptracks);
+    const message = document.createElement("p");
+    message.textContent = `Here some songs we recommend from`;
     const unorderedList = document.createElement("ul");
-
     for(let i = 0; i < 5; i++){
         const trackName = data.toptracks.track[i].name;
         const listItem = document.createElement("li");
