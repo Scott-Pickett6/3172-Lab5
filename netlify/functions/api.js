@@ -14,8 +14,6 @@ router.get("/recommendations", async (req, res) => {
         error: "Artist is required"
     });
     try {
-        // 6a75091e2fe639ad539a21d8ff485c57
-        // I could not get the API key to work from .env file
         const response = await fetch(
             `https://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=${artist}&api_key=${API_KEY}&format=json`,
             {
