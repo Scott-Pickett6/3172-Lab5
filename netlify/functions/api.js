@@ -10,8 +10,6 @@ const API_KEY = process.env.LAST_FM_API_KEY;
 
 router.get("/recommendations", async (req, res) => {
     const artist = req.query.artist;
-    console.log("artist: " + artist);
-
     if (!artist) return res.status(400).json({
         error: "Artist is required"
     });
